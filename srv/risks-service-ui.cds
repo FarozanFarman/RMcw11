@@ -76,7 +76,6 @@ annotate RiskService.Risks with @(
 				},
 				{Value: supplier_ID},
                 {Value: supplier.isBlocked},
-				{Value: status_value, Criticality: status.criticality},
 			]
 		}
 	},
@@ -136,4 +135,15 @@ annotate RiskService.Suppliers with {
     fullName    @title: 'Name';
 }
 
+
 annotate RiskService.Suppliers with @Capabilities.SearchRestrictions.Searchable : false;
+
+annotate RiskService.Risks with {	
+    status @(	
+        Common: {	
+        ValueList: {entity: 'StatusValues'},	
+        ValueListWithFixedValues,	
+        FieldControl: #Mandatory	
+    }	
+    );	
+};

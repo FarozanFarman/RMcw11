@@ -74,20 +74,21 @@
         "[production]": {
           "credentials": {
             "path": "/sap/opu/odata/sap/API_BUSINESS_PARTNER",
-            "destination": "cpapp-bupa11"
+            "destination": "cpapp-bupa"
           }
+        }
+      },
+      "messaging": {
+        "kind": "local-messaging",
+        "[production]": {
+          "kind": "enterprise-messaging-shared",
+          "format": "cloudevents",
+          "publishPrefix": "$namespace/ce/",
+          "subscribePrefix": "+/+/+/ce/"
         }
       }
     },
-    "messaging": {
-      "kind": "local-messaging",
-      "[production]": {
-        "kind": "enterprise-messaging-shared",
-        "format": "cloudevents",
-        "publishPrefix": "$namespace/ce/",
-        "subscribePrefix": "+/+/+/ce/"
-      }
-    },
+    
     "hana": {
       "deploy-format": "hdbtable"
     }

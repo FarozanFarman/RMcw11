@@ -1,7 +1,7 @@
 {
     "_version": "1.32.0",
     "sap.app": {
-        "id": "ns.risks11",
+        "id": "ns.risks",
         "type": "application",
         "i18n": "i18n/i18n.properties",
         "applicationVersion": {
@@ -150,6 +150,6 @@
     },
     "sap.cloud": {
         "public": true,
-        "service": "cpapp.service11"
+        "service": "cpapp.service"
     }
 }

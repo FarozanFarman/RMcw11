@@ -52,16 +52,16 @@ modules:
           TokenServiceInstanceName: cpapp-uaa
           TokenServiceKeyName: cpapp-uaa-key
           URL: ~{srv-api/srv-url}
-          sap.cloud.service: cpapp.service11
+          sap.cloud.service: cpapp.service
         - Name: cpapp-html5-repo-host
           ServiceInstanceName: cpapp-html5-repo-host
           ServiceKeyName: cpapp-html5-repo-host-key
-          sap.cloud.service: cpapp.service11
+          sap.cloud.service: cpapp.service
         - Authentication: OAuth2UserTokenExchange
           Name: cpapp-uaa
           ServiceInstanceName: cpapp-uaa
           ServiceKeyName: cpapp-uaa-key
-          sap.cloud.service: cpapp.service11
+          sap.cloud.service: cpapp.service
         existing_destinations_policy: update
   build-parameters:
     no-source: true
@@ -105,13 +105,13 @@ modules:
     supported-platforms: []
 resources:
 - name: cpapp-em
-  type: org.cloudfoundry.managed-service
+  type: org.cloudfoundry.existing-service
   parameters:
     path: ./enterprise-messaging.json
     service: enterprise-messaging
     service-plan: default
 - name: cpapp-bupa-messaging
-  type: org.cloudfoundry.managed-service
+  type: org.cloudfoundry.existing-service
   parameters:
     skip-service-updates:
         plan: true
@@ -121,8 +121,8 @@ resources:
     service: s4-hana-cloud
     service-plan: messaging
     system-name: CPAPP_S4HANA_CLOUDcw9
-- name: cpapp-bupa11
-  type: org.cloudfoundry.managed-service
+- name: cpapp-bupa
+  type: org.cloudfoundry.existing-service
   parameters:
     skip-service-updates:
         plan: true
@@ -135,7 +135,7 @@ resources:
     config:
         systemName: CPAPP_S4HANA_CLOUDcw9
 - name: cpapp-logs
-  type: org.cloudfoundry.managed-service
+  type: org.cloudfoundry.existing-service
   parameters:
     service: application-logs
     service-plan: lite
@@ -147,7 +147,7 @@ resources:
   properties:
     hdi-service-name: ${service-name}
 - name: cpapp-uaa
-  type: org.cloudfoundry.managed-service
+  type: org.cloudfoundry.existing-service
   parameters:
     config:
       role-collections:
@@ -165,7 +165,7 @@ resources:
     service: xsuaa
     service-plan: application
 - name: cpapp-destination
-  type: org.cloudfoundry.managed-service
+  type: org.cloudfoundry.existing-service
   parameters:
     config:
       HTML5Runtime_enabled: true

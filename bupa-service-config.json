@@ -1,5 +1,5 @@
 {
-    "systemName": "<set in mta.yaml>",
+    "systemName": "CPAPP_S4HANA_CLOUDcw9",
     "communicationArrangement": {
         "communicationArrangementName": "CPAPP_COM_0008",
         "scenarioId": "SAP_COM_0008",
